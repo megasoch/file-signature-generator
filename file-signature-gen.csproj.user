@@ -4,6 +4,6 @@
     <StartArguments>"C:\\Users\\megasoch\\Documents\\Visual Studio 2015\\Projects\\file-signature-gen\\large.in" 10000</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>"C:\\Users\\megasoch\\Documents\\Visual Studio 2015\\Projects\\file-signature-gen\in" 0</StartArguments>
+    <StartArguments>"C:\\Users\\megasoch\\Documents\\Visual Studio 2015\\Projects\\file-signature-gen\large.in" 2234</StartArguments>
   </PropertyGroup>
 </Project>
