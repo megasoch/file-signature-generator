@@ -1,4 +1,5 @@
-﻿using file_signature_gen.hasher;
+﻿using file_signature_gen.exceptions;
+using file_signature_gen.hasher;
 using file_signature_gen.input;
 using file_signature_gen.processor;
 using System;
@@ -15,6 +16,9 @@ namespace file_signature_gen
             {
                 String fileName = args[0];
                 int chunkSize = Int32.Parse(args[1]);
+
+                if (chunkSize <= 0)
+                    throw new InvalidValueException("Invalid chunk size value, must be natural number");
 
                 ByteBufferOnArray byteBuffer1 = new ByteBufferOnArray(chunkSize);
                 ByteBufferOnArray byteBuffer2 = new ByteBufferOnArray(chunkSize);
@@ -68,6 +72,10 @@ namespace file_signature_gen
             catch (FileNotFoundException)
             {
                 Console.WriteLine("File not found");
+            }
+            catch (InvalidValueException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             catch (Exception ex)
             {
